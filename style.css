@@ -1,0 +1,308 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+:root {
+  --SoftCyanFullSliderBar: hsl(174, 77%, 80%);
+  --StrongCyanSliderBackround: hsl(174, 86%, 45%);
+  --LightGrayishRedDiscountBackground: hsl(14, 92%, 95%);
+  --LightRedDiscountText: hsl(15, 100%, 70%);
+  --PaleBlueCTAText: hsl(226, 100%, 87%);
+
+  --WhitePricingComponentBackground: hsl (0, 0%, 100%);
+  --VeryPaleBlueMainBackground: hsl(230, 100%, 99%);
+  --LightGrayishBlueEmptySliderBar: hsl(224, 65%, 95%);
+  --LightGrayishBlueToggleBackground: hsl(223, 50%, 87%);
+  --GrayishBlueText: hsl(225, 20%, 60%);
+  --DarkDesaturatedBlueTextCTABackground: hsl(227, 35%, 25%);
+}
+
+body {
+  background: url(images/bg-pattern.svg) no-repeat;
+  width: 100%;
+  background-size: 100% 60%;
+  background-position: top;
+  background-color: var(--VeryPaleBlueMainBackground);
+}
+
+section {
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+}
+
+.hero-section {
+  padding: 5rem;
+  background: url(images/pattern-circles.svg) no-repeat;
+  background-position: center;
+}
+
+h1 {
+  text-align: center;
+  color: var(--DarkDesaturatedBlueTextCTABackground);
+  font-weight: 800;
+  font-size: 1.8em;
+}
+
+.hero-section > p {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--GrayishBlueText);
+  font-weight: 500;
+}
+
+.pricing-section {
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-wrapper {
+  margin-top: 2rem;
+  padding: 2.5rem 2rem 1.5rem;
+  background: white;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.pricing-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1.5rem;
+}
+
+.pageviews-info {
+  color: var(--GrayishBlueText);
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 0.85em;
+}
+
+.price-section {
+  font-size: 2em;
+  font-weight: 800;
+  color: var(--DarkDesaturatedBlueTextCTABackground);
+}
+
+.billing-period {
+  color: var(--GrayishBlueText);
+  font-size: 0.6em;
+  font-weight: 500;
+  margin-inline: 3px;
+}
+
+.field {
+  margin-block: 2.5rem;
+}
+
+input[type="range"] {
+  width: 100%;
+  appearance: none;
+  cursor: pointer;
+  border-radius: 15px;
+  -webkit-appearance: none;
+  outline: none;
+  height: 8px;
+  background-color: var(--LightGrayishBlueEmptySliderBar);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  /*custom styles*/
+  background: url(images/icon-slider.svg) no-repeat;
+  background-position: center;
+  background-size: 55%;
+  background-color: var(--StrongCyanSliderBackround);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  border: 1px solid var(--StrongCyanSliderBackround);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 0 8px 30px 5px hsla(174, 86%, 45%, 0.52);
+}
+
+.billing-details {
+  margin-block: 2.8rem 1rem;
+  margin-inline: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.billing-monthly,
+.billing-yearly {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: var(--GrayishBlueText);
+}
+
+.billing-yearly > span {
+  background-color: var(--LightGrayishRedDiscountBackground);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  margin-left: 5px;
+  color: var(--LightRedDiscountText);
+  font-weight: 700;
+}
+
+.toggle-Switch {
+  display: flex;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 20px;
+  background-color: var(--LightGrayishBlueToggleBackground);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.switch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translate(0, -50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="checkbox"]:checked + .switch::after {
+  transform: translate(23px, -50%);
+}
+
+input[type="checkbox"]:checked + .switch {
+  background-color: var(--StrongCyanSliderBackround);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.footer-content {
+  border-top: 1px solid rgba(128, 128, 128, 0.126);
+  background: white;
+  padding: 2rem 2rem;
+  border-radius: 0 0 10px 10px;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.features-list > p {
+  color: var(--GrayishBlueText);
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+.features-list > p > img {
+  margin-inline: 20px;
+}
+
+.trial-button {
+  width: 150px;
+  height: 35px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--DarkDesaturatedBlueTextCTABackground);
+  color: var(--PaleBlueCTAText);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.trial-button:hover {
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  section {
+    height: 100%;
+    padding: 1rem 1rem 4rem;
+  }
+
+  .hero-section {
+    padding: 5rem 1rem;
+  }
+  .hero-section > p {
+    padding-inline: 40px;
+  }
+
+  .pricing-wrapper {
+    position: relative;
+  }
+
+  .pricing-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .price-section {
+    position: absolute;
+    left: 50%;
+    bottom: 110px;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+  }
+
+  .billing-details {
+    margin-inline: 0;
+    margin-top: 8rem;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .features-list {
+    align-items: center;
+    gap: 15px;
+  }
+
+  .features-list > p > img {
+    margin-inline: 0 15px;
+  }
+
+  .trial-button {
+    margin-top: 1.8rem;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .billing-monthly,
+  .billing-yearly {
+    font-size: 0.75em;
+  }
+  .billing-yearly > span {
+    padding: 5px;
+  }
+}
